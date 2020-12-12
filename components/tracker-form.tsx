@@ -1,18 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, MouseEvent, ChangeEvent } from 'react';
 import { TextField } from '@material-ui/core';
 import styles from './tracker-form.module.scss';
 
-const TrackerForm = ({addCrypto}) => {
+interface TrackerFormProps {
+  addCrypto: Function
+}
+
+const TrackerForm = ({ addCrypto }: TrackerFormProps) => {
   const [cryptoCode, setCryptoCode] = useState('');
   const inputProps = {style: {fontSize: '0.8rem'}}
   const inputLabelProps = {style: {fontSize: '0.8rem'}}
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e:ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setCryptoCode(value);
   }
 
-  const handleButtonClick = (e) => {
+  const handleButtonClick = (e: MouseEvent) => {
     e.preventDefault();
     setCryptoCode('');
     addCrypto(cryptoCode);

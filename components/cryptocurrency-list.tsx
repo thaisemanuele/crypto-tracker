@@ -11,8 +11,11 @@ const CryptocurrencyItem = dynamic(() => import('../components/cryptocurrency-it
 
 import styles from './cryptocurrency-list.module.scss'
 
-const CryptocurrencyList = ({loading}) => {
+interface CryptocurrencyListProps {
+  loading: boolean
+}
 
+const CryptocurrencyList = ({ loading }: CryptocurrencyListProps) => {
   const cryptocurrencyItems = useSelector((state: RootState) => state.cryptocurrencies.currencies);
 
   const listItems = cryptocurrencyItems.map(item => {
@@ -32,7 +35,6 @@ const CryptocurrencyList = ({loading}) => {
       </ul>
     </section>
   )
-
 }
 
 export default CryptocurrencyList;

@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { MouseEvent } from 'react';
+
+import { removeOne } from '../utils/cryptosFacade';
+import { CryptocurrencyItemType } from '../core-state/cryptocurrencies.slice';
 
 import styles from './cryptocurrency-item.module.scss';
-import { removeOne } from '../utils/cryptosFacade';
 
-const CryptocurrencyItem = ({item}) => {
-  const removeItem = (e) => {
-    removeOne(e.target.id);
+interface CryptocurrencyItemProps {
+  item: CryptocurrencyItemType
+}
+
+const CryptocurrencyItem = ({ item }: CryptocurrencyItemProps) => {
+  const removeItem = (e: MouseEvent) => {
+    removeOne(e.currentTarget.id);
   };
 
   return (

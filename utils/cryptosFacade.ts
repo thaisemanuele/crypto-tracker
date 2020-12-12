@@ -4,7 +4,7 @@ import { CryptocurrencyItemType, addCryptocurrency, removeCryptocurrency } from 
 const parsePrice = (price: string) => Number.parseFloat(price);
 const roundPrice = (price: number): string => (Math.round(price*100)/100).toFixed(2);
 
-const filterInvalidPrices = (markets) => markets.filter(market => market.price && market.price.last);
+const filterInvalidPrices = (markets:CryptocurrencyItemType[]) => markets.filter(market => market.price && market.price.last);
 
 export const addOneFromList = (itemsList: CryptocurrencyItemType[]) => {
 

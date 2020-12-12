@@ -37,7 +37,7 @@ export default function Home() {
     }
   }, [data, loading]);
 
-  const addItem = (cryptoCode) => {
+  const addItem = (cryptoCode: string) => {
     getCryptoCurrencyItems({
       variables: {"symbol":cryptoCode}
     });
@@ -47,7 +47,7 @@ export default function Home() {
     <div className={styles.container}>
       <Head>
         <title>Crypto tracker | Bitcasino cryptocurrency tracker</title>
-        <meta name="description" content="A simple cryptocurrency tracker built with React and using Apollo Client."/>
+        <meta name="description" content="A simple cryptocurrency tracker built with React and using Apollo Client. Demo purposes only"/>
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;400&family=Kanit&display=swap" rel="stylesheet" />

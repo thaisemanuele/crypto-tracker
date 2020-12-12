@@ -13,9 +13,9 @@ export interface CryptocurrencyItemType {
 
 export interface CryptocurrencyState {
   currencies: CryptocurrencyItemType[];
-  currenciesIncluded: {};
+  currenciesIncluded: {[key: string]: boolean};
   loadingStatus: 'not loaded' | 'loading' | 'loaded' | 'error';
-  error: string;
+  error: string | null;
 }
 
 export const initialCryptocurrenciesState: CryptocurrencyState = {
