@@ -1,0 +1,37 @@
+@import '../styles/variables.scss';
+
+.form {
+  display: flex;
+  flex-flow: column;
+}
+  
+.button {
+  background: #fe4b24;;
+  border-radius: 35px;
+  display: inline-block;
+  border: none;
+  padding: 0.65rem 1.5rem;
+  margin: 10px 0;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 0.8rem;
+  cursor: pointer;
+  text-align: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.small-text {
+  font-size: smaller;
+  color: darkgray;
+}
+
+.disclaimer {
+  text-align: center;
+  padding: 16px 0;
+  margin-top: 0;
+  @media screen and (max-width: $small-breakpoint) {
+    padding: 0;
+  }
+}
+  
