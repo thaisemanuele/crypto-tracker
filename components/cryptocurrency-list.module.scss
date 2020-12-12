@@ -1,0 +1,40 @@
+@import '../styles/variables.scss';
+
+.cryptos-list {
+  grid-area: 3/2/4/3;
+  width: 65%;
+  overflow: scroll;
+  
+  @media screen and (max-width: $small-breakpoint) {
+    width: 80%;
+    height: calc(95vh - 350px);
+  }
+
+  @media screen and (min-width: $small-breakpoint + 1px) {
+    width: 85%;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  max-width: 80%;
+  padding-bottom: 10px;
+  @media screen and (max-width: $small-breakpoint) {
+    padding-top: 10px;
+  }
+}
+
+.crypto-item-divider {
+  background: linear-gradient(to right, #624a79, #2a0d4a);
+  height: 1px;
+  padding: 0;
+  margin: 10px 0;
+  border: 0;
+  width: 90%;
+}
