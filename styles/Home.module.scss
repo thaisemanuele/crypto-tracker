@@ -1,0 +1,181 @@
+@import '../styles/variables.scss';
+
+.container {
+  margin: 0;
+}
+
+.hero {
+  display: block;
+  position: relative;
+  width: 100%; 
+  height: 95vh;
+  overflow: hidden;
+  background-size: contain;
+  background-image: url("/assets/bg.png");
+  background-color: $base-color;
+  background-position: 74vw 16vh;
+  background-repeat: no-repeat;
+  padding: 15px;
+  padding-bottom: 0;
+  font-family: 'IBM Plex Sans', sans-serif;
+
+  @media screen and (min-width: $small-breakpoint + 1px) {
+    display: grid;
+    padding: 0;
+    grid-template-rows: 1.5fr 3fr 5fr;
+    grid-template-columns: 1fr 4fr 1fr 4fr;
+    height: 90vh;
+  }
+  
+  @media screen and (min-width: $medium-breakpoint + 1px) {
+    grid-template-rows: 1.4fr 3fr 3fr .8fr;
+    grid-template-columns: 1fr 4fr 3fr 4fr;
+    height: 85vh;
+    background-position: 74vw;
+  }
+
+  img {
+    max-width: 30vw;
+    max-height: 50vh;
+    position: absolute;
+    bottom: 0;
+    justify-self: center;
+    @media screen and (max-width: $small-breakpoint) {
+      right: 0;
+    }
+    @media screen and (min-width: $small-breakpoint + 1px) {
+      position: relative;
+      grid-area: 3/4;
+      align-self: flex-end;
+    }
+    @media screen and (min-width: $medium-breakpoint + 1px) {
+      position: absolute;
+      grid-area: unset;
+    }
+  }
+}
+
+.main-description {
+  color: white;
+  grid-area: 2/2/3/3;
+
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    max-width: 80%;
+    margin: 0;
+
+    @media screen and (min-width: $small-breakpoint + 1px) {
+      font-size: 2rem;
+      max-width: 98%;
+    }
+    @media screen and (min-width: $medium-breakpoint + 1px) {
+      font-size: 2.4rem;
+      max-width: 85%;
+    }
+  }
+
+  p {
+    font-size: 1rem;
+    color: #725c87;
+    max-width: 75%;
+    margin-top: 8px;
+    span {
+      display: none;
+    }
+
+    @media screen and (min-width: $small-breakpoint + 1px) {
+      font-size: 1.24rem;
+      max-width: 75%;
+      span {
+        display: initial;
+      }
+    }
+    
+    @media screen and (min-width: $medium-breakpoint + 1px) {
+      max-width: 52%;
+    }
+  }
+}
+
+.logo {
+  grid-area: 1/2/2/3;
+  align-self: center;
+  margin-left: -5px;
+  img {
+    position: relative;
+  }
+  @media screen and (min-width: $small-breakpoint + 1px) {
+    margin-left: -10px;
+  }
+}
+
+.input-form {
+  width: 100%;
+  min-width: 280px;
+  max-width: 350px;
+  height: 160px;
+  grid-area: 2/4/3/5;
+  background-color: white;
+  border-radius: 2px;
+  display: flex;
+  flex-flow: column;
+  padding: 20px;
+  z-index: 1;
+  @media screen and (min-width: $small-breakpoint + 1px) {
+    width: 70%;
+    min-width: 280px;
+    height: 220px;
+    margin-left: 0;
+    grid-area: 2/4/3/5;
+    padding: 40px;
+  }
+  @media screen and (min-width: $medium-breakpoint + 1px) {
+    min-width: 300px;
+    margin-left: 20px;
+  }
+}
+
+.footer {
+  max-width: 80%;
+  height: 100px;
+  margin: 0 auto;
+  border-top: 1px solid #eaeaea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p {
+    font-size: 0.5rem;
+    color: darkgray;
+    @media screen and (min-width: $medium-breakpoint + 1px) {
+      font-size: smaller;
+    }
+  }
+}
+
+.cryptos-list {
+  grid-area: 3/2/4/3;
+  width: 65%;
+  overflow: scroll;
+  
+  @media screen and (max-width: $small-breakpoint) {
+    width: 80%;
+    height: calc(95vh - 350px);
+  }
+
+  @media screen and (min-width: $small-breakpoint + 1px) {
+    width: 85%;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+}
