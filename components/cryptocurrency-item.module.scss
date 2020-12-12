@@ -1,0 +1,31 @@
+
+.crypto-item {
+  display: flex;
+  align-items: center;
+  color: white;
+  background-color: #2a0c4a;
+  img {
+    position: relative;
+    height: fit-content;
+  }
+  .market {
+    margin-left: 10px;
+    flex-basis: 60%;
+    p {
+      margin: 4px;
+    }
+    .price {
+      color: darkgray;
+      font-size: 0.75rem;
+    }
+  }
+  span {
+    padding: 5px;
+    color: darkgray;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+  
+  
