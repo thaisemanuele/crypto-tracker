@@ -1,8 +1,8 @@
 
-This app was built with [Next.js](https://nextjs.org/).
+This app was built with [Next.js](https://nextjs.org/) and is temporarily deployed at https://vigorous-villani-ad1063.netlify.app/
 
 
-#### Starting the Application
+#### Running the Application locally
 
 Install the modules and run the development server:
 
