@@ -2,16 +2,17 @@
 
 .cryptos-list {
   grid-area: 3/2/4/3;
-  width: 65%;
+  width: 80%;
+  height: calc(95vh - 350px);
   overflow: scroll;
   
-  @media screen and (max-width: $small-breakpoint) {
-    width: 80%;
-    height: calc(95vh - 350px);
+  @media screen and (min-width: $small-breakpoint) {
+    width: 85%;
   }
 
-  @media screen and (min-width: $small-breakpoint + 1px) {
-    width: 85%;
+  @media screen and (min-width: $medium-breakpoint) {
+    width: 65%;
+    height: calc(100% + 30px);
   }
 
   ul {
