@@ -1,31 +1,39 @@
 import store from '../store/store';
 import { CryptocurrencyItemType, addCryptocurrency, removeCryptocurrency } from '../core-state/cryptocurrencies.slice';
 
-const parsePrice = (price: string) => Number.parseFloat(price);
-const roundPrice = (price: number): string => (Math.round(price*100)/100).toFixed(2);
+export const parsePrice = (price: string) => Number.parseFloat(price);
+export const roundPrice = (price: number): string => (Math.round(price*100)/100).toFixed(2);
 
-const filterInvalidPrices = (markets:CryptocurrencyItemType[]) => markets.filter(market => market.price && market.price.last);
+export const filterInvalidPrices = (markets:CryptocurrencyItemType[]) => markets.filter(market => market.price && market.price.last);
 
 export const addOneFromList = (itemsList: CryptocurrencyItemType[]) => {
-
   const itemsWithValidPrices = filterInvalidPrices(itemsList);
+
   if (itemsWithValidPrices.length) {
     const validItem = itemsWithValidPrices[0];
-    const cryptocurrencyItem = {
-      id: validItem.id,
-      symbol: validItem.symbol,
-      price: {
-        last: roundPrice(parsePrice(validItem.price.last))
-      }
-    }
+    const cryptocurrencyItem = buildCryptocurrencyItem(validItem);
     removeOne(validItem.id);
-    store.dispatch(addCryptocurrency(cryptocurrencyItem));
+    addOne(cryptocurrencyItem);
   }
 }
 
-export const removeOne = (id: string) => {
+const addOne = (item: CryptocurrencyItemType): void => {
+  store.dispatch(addCryptocurrency(item));
+}
+
+export const removeOne = (id: string): void => {
   const { cryptocurrencies } = store.getState();
   if( cryptocurrencies.currenciesIncluded[id]){
     store.dispatch(removeCryptocurrency(id));
   }
+}
+
+export const buildCryptocurrencyItem = (validItem: CryptocurrencyItemType): CryptocurrencyItemType => {
+  return {
+    id: validItem.id,
+    symbol: validItem.symbol,
+    price: {
+      last: roundPrice(parsePrice(validItem.price.last))
+    }
+  };
 }

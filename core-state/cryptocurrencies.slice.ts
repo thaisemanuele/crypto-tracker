@@ -14,14 +14,12 @@ export interface CryptocurrencyItemType {
 export interface CryptocurrencyState {
   currencies: CryptocurrencyItemType[];
   currenciesIncluded: {[key: string]: boolean};
-  loadingStatus: 'not loaded' | 'loading' | 'loaded' | 'error';
   error: string | null;
 }
 
 export const initialCryptocurrenciesState: CryptocurrencyState = {
   currencies: [],
   currenciesIncluded: {},
-  loadingStatus: 'not loaded',
   error: null,
 }
 

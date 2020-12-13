@@ -15,7 +15,7 @@ const CryptocurrencyItem = ({ item }: CryptocurrencyItemProps) => {
   };
 
   return (
-    <div className={styles['crypto-item']}>
+    <div className={styles['crypto-item']} data-testid={item.id}>
       <img src="./assets/icon.svg" alt="Trophy icon" />
       <div className={styles['market']}>
         <p className={styles['name']}>{item.symbol}</p>
